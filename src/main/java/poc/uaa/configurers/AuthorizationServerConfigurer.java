@@ -60,7 +60,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	@Override
 	public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
 		security.allowFormAuthenticationForClients()
-				.passwordEncoder(encoder());
+				.passwordEncoder(passwordEncoder());
 	}
 
 	@Override
@@ -76,7 +76,7 @@ public class AuthorizationServerConfigurer extends AuthorizationServerConfigurer
 	}
 
 	@Bean
-	public PasswordEncoder encoder() {
+	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
